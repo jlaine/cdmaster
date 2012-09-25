@@ -2,12 +2,8 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_OGOLD_H__5A2E8561_F494_42AD_B58A_A31CB30EB1FE__INCLUDED_)
-#define AFX_OGOLD_H__5A2E8561_F494_42AD_B58A_A31CB30EB1FE__INCLUDED_
-
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
+#ifndef OGOLD_H
+#define OGOLD_H
 
 #include "gold.h"
 
@@ -34,4 +30,4 @@ public:
 
 };
 
-#endif // !defined(AFX_OGOLD_H__5A2E8561_F494_42AD_B58A_A31CB30EB1FE__INCLUDED_)
+#endif

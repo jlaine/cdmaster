@@ -2,12 +2,8 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_GOLD_H__707F6185_12EE_419B_8EA3_D25BB499F5C6__INCLUDED_)
-#define AFX_GOLD_H__707F6185_12EE_419B_8EA3_D25BB499F5C6__INCLUDED_
-
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
+#ifndef GOLD_H
+#define GOLD_H
 
 #include "mseq.h"
 
@@ -33,4 +29,4 @@ public:
 
 };
 
-#endif // !defined(AFX_GOLD_H__707F6185_12EE_419B_8EA3_D25BB499F5C6__INCLUDED_)
+#endif

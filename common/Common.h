@@ -1,6 +1,5 @@
-#if !defined(COMMON_H__INCLUDED_)
-#define COMMON_H__INCLUDED_
-
+#ifndef COMMON_H
+#define COMMON_H
 
 //-----------------------------------------------------------------------------
 // Defines, constants, and global variables

@@ -2,12 +2,8 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#if !defined(AFX_MSEQ_H__85F752A2_96C8_42FF_B9F0_DE4EA47FD227__INCLUDED_)
-#define AFX_MSEQ_H__85F752A2_96C8_42FF_B9F0_DE4EA47FD227__INCLUDED_
-
-#if _MSC_VER > 1000
-#pragma once
-#endif // _MSC_VER > 1000
+#ifndef MSEQ_H
+#define MSEQ_H
 
 class CMseq  
 {
@@ -32,4 +28,4 @@ public:
 	virtual ~CMseq();
 };
 
-#endif // !defined(AFX_MSEQ_H__85F752A2_96C8_42FF_B9F0_DE4EA47FD227__INCLUDED_)
+#endif
