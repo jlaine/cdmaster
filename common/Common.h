@@ -7,16 +7,20 @@
 //-----------------------------------------------------------------------------
 
 #include <math.h>
+#include <stdint.h>
+#include <stdlib.h>
 #include "Defs.h"
 
 void GenGoldCodes(int pCodes[KEY_LENGTH][KEY_LENGTH]); 
 
-void WriteHalfSine(BYTE* buffer, int coeff);
-void WriteHalfSine(short* buffer, int coeff);
+void WriteHalfSine(uint8_t* buffer, int coeff);
+void WriteHalfSine(int16_t* buffer, int coeff);
 
-double CalcCorrel(BYTE* buffer1, BYTE* buffer2, double prod_ampli1, double ampli2, DWORD nhsines=1);
-double CalcCorrel(short* buffer1, short* buffer2, double prod_ampli1, double ampli2, DWORD nhsines=1);
+double CalcCorrel(uint8_t* buffer1, uint8_t* buffer2, double prod_ampli1, double ampli2, size_t nhsines=1);
+double CalcCorrel(int16_t* buffer1, int16_t* buffer2, double prod_ampli1, double ampli2, size_t nhsines=1);
 
+#if 0
 void SetString(CWnd* pWnd, int nWID, int nSID);
+#endif
 
 #endif

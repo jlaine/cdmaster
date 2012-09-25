@@ -2,7 +2,6 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-#include "stdafx.h"
 #include "Common.h"
 #include "OGold.h"
 
@@ -49,34 +48,34 @@ void GenGoldCodes(int pCodes[KEY_LENGTH][KEY_LENGTH]) {
 
 
 //8bit writes a half-sine to a byte buffer
-void WriteHalfSine(BYTE* buffer, int coeff) {
+void WriteHalfSine(uint8_t* buffer, int coeff) {
 	const float cf = 3.1415927f/HSINE_POINTS;
 	float ampli = float(HSINE_AMPLI * coeff);
 	
 	int zero = 1 << 7;
 
 	for(int i = 0; i < HSINE_POINTS; i++) {
-		buffer[i] = BYTE(ampli*sin(i*cf)+zero);
+		buffer[i] = uint8_t(ampli*sin(i*cf)+zero);
 	}
 }
 
 //16bit writes a half-sine to a uint buffer
-void WriteHalfSine(short* buffer, int coeff) {
+void WriteHalfSine(int16_t* buffer, int coeff) {
 	const float cf = 3.1415927f/HSINE_POINTS;
 	float ampli = float(HSINE_AMPLI * coeff);
 
 	for(int i = 0; i < HSINE_POINTS; i++) {
-		buffer[i]=WORD(ampli*sin(i*cf));
+		buffer[i]=int16_t(ampli*sin(i*cf));
 	}
 
 }
 
 
 // calculates the correlation between two signals
-double CalcCorrel(BYTE* buffer1, BYTE* buffer2, double ampli1, double ampli2, DWORD n /*=1*/)
+double CalcCorrel(uint8_t* buffer1, uint8_t* buffer2, double ampli1, double ampli2, size_t n /*=1*/)
 {
 	double correl = 0;
-	DWORD dwPos = 0;
+	size_t dwPos = 0;
 
 	for (dwPos = 0; dwPos < n*KEY_LENGTH*HSINE_POINTS; dwPos++) {
 		correl += ((buffer1[dwPos]-128)/ampli1) * ((buffer2[dwPos]-128)/ampli2);
@@ -87,10 +86,10 @@ double CalcCorrel(BYTE* buffer1, BYTE* buffer2, double ampli1, double ampli2, DW
 }
 
 // calculates the correlation between two signals
-double CalcCorrel(short* buffer1, short* buffer2, double ampli1, double ampli2, DWORD n /*=1*/)
+double CalcCorrel(int16_t* buffer1, int16_t* buffer2, double ampli1, double ampli2, size_t n /*=1*/)
 {
 	double correl = 0;
-	DWORD dwPos = 0;
+	size_t dwPos = 0;
 
 	for (dwPos = 0; dwPos < n*KEY_LENGTH*HSINE_POINTS; dwPos++) {
 		correl += (buffer1[dwPos]/ampli1) * (buffer2[dwPos]/ampli2);
@@ -100,6 +99,7 @@ double CalcCorrel(short* buffer1, short* buffer2, double ampli1, double ampli2, 
 	return correl;
 }
 
+#if 0
 // sets an item's string after reading it from resources
 void SetString(CWnd* pWnd, int nWID, int nSID)
 {
@@ -107,4 +107,4 @@ void SetString(CWnd* pWnd, int nWID, int nSID)
 	sTemp.LoadString(nSID);
 	pWnd->SetDlgItemText(nWID, sTemp);
 }
-
+#endif
